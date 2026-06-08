@@ -1,0 +1,55 @@
+syntax = "proto3";
+package broker;
+option go_package = "./brokerpb";
+
+import "google/protobuf/empty.proto";
+
+service Broker {
+    rpc PushEvents(stream Event) returns (google.protobuf.Empty);
+    rpc Subscribe(SubscribeRequest) returns (stream Event);
+    rpc RegisterParams(WorkParams) returns (google.protobuf.Empty);
+    rpc GetParams(WorkContext) returns (WorkParams);
+    rpc SetState(WorkState) returns (google.protobuf.Empty);
+    rpc GetState(WorkState) returns (WorkState);
+    rpc SetProgressBar(ProgressBar) returns (google.protobuf.Empty);
+    rpc SubscribeProgressBars(SubscribeRequest) returns (stream ProgressBar);
+}
+
+message SubscribeRequest {
+    string session_id = 1;
+}
+
+message Event {
+    string work_context = 1;
+    string type = 2;
+    string text = 3;
+    string session_id = 4;
+}
+
+message WorkContext {
+    string value = 1;
+    string session_id = 2;
+}
+
+message WorkParams {
+    string work_context = 1;
+    string params_json  = 2;
+    string session_id   = 3;
+}
+
+message WorkState {
+    string work_context = 1;
+    string state_name   = 2;
+    string state_json   = 3;
+    string session_id   = 4;
+}
+
+message ProgressBar {
+    string session_id   = 1;
+    string work_context = 2;
+    string name         = 3;
+    double value        = 4;
+    double min          = 5;
+    double max          = 6;
+    bool   is_int       = 7;
+}

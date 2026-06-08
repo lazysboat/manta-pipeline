@@ -1,0 +1,10 @@
+[project]
+name = "my-pipeline"
+version = "0.1.0"
+requires-python = "==3.11.11"
+dependencies = [
+  "ray[default,data,train]==2.53.0",
+  "torch",
+  "boto3",
+  "coolname",
+]

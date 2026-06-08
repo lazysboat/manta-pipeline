@@ -1,0 +1,46 @@
+
+# cluster = "cluster/local_head.yaml" # When cluster definition is not set, all work runs locally 
+
+[local-pipeline] # Define Pipeline
+src_dir = "src"
+dependencies = "pyproject.toml"
+
+[local-pipeline.stage-a] # Define Stage
+
+[local-pipeline.stage-a.work-0] # Define Work
+after = ["root"] # Optional clarity
+entrypoint = "work_0.py"
+params = [
+    { name = "dev-int", value = 5},
+    { name = "dev-str", value = "Hello"},
+    { name = "dev-bool", value = false}
+]
+
+[local-pipeline.stage-a.work-1]
+after = ["work-0"] # Optional clarity
+entrypoint = "work_1.py"
+
+[local-pipeline.stage-a.work-2]
+after = ["work-0"]
+entrypoint = "work_2.py"
+
+[local-pipeline.stage-a.work-3]
+after = ["work-1", "work-2"]
+entrypoint = "work_3.py"
+
+[local-pipeline.stage-a.gpu]
+after = ["work-3"]
+entrypoint = "gpu.py"
+
+[local-pipeline.stage-b]
+
+[local-pipeline.stage-b.work-0]
+entrypoint = "stage_b/work_0.py"
+
+[local-pipeline.stage-b.long-work]
+entrypoint = "stage_b/long_work.py"
+
+[local-pipeline.stage-b.manual-work]
+after = ["work-0"]
+entrypoint = "stage_b/work_0.py"
+manual_work = true # By default, this work is now skipped by the manta-pipeline run if not specifically run as local-pipeline.stage-b.manual-work

@@ -1,0 +1,15 @@
+
+*.txt
+*.log
+*.json
+*.done
+*.sock
+*.hash
+*.pyc
+*.manta
+*.venv
+
+temp
+dev-pipeline
+
+.claude
