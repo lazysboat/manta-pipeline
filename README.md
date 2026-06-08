@@ -4,7 +4,7 @@ Implements single definition paradigm, enabling easy orchestration and observabi
 
 **This is minimal dev preview for demonstration puroses** (`0.1.0.dev1`)
 
-Ubuntu/Linux only. Requires [`uv`](https://docs.astral.sh/uv/).
+<!-- Ubuntu/Linux only. Requires [`uv`](https://docs.astral.sh/uv/).
 
 ## Install
 
@@ -31,4 +31,4 @@ manta-pipeline up                  # start a local Ray head
 manta-pipeline build               # build the pipeline
 manta-pipeline run local-pipeline  # run it
 manta-pipeline down                # stop
-```
+``` -->
