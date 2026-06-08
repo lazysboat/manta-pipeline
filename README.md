@@ -11,14 +11,14 @@ Ubuntu/Linux only. Requires [`uv`](https://docs.astral.sh/uv/).
 **CLI** (Ubuntu):
 
 ```sh
-curl -fsSL https://github.com/lazysboat/manta-pipeline/releases/latest/download/install.sh | sh
+curl -fsSL https://github.com/lazysboat/manta-pipeline/releases/download/v0.1.0.dev1/install.sh | sh -s -- v0.1.0.dev1
 manta-pipeline version
 ```
 
 **Python API** (for authoring pipeline works):
 
 ```sh
-pip install "mantapipeline @ git+https://github.com/lazysboat/manta-pipeline.git#subdirectory=python-api"
+pip install "mantapipeline @ git+https://github.com/lazysboat/manta-pipeline.git@v0.1.0.dev1#subdirectory=python-api"
 ```
 
 ## Get started

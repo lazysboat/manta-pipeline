@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 # manta-pipeline CLI installer (Ubuntu/Linux, amd64 + arm64).
 #
-#   curl -fsSL https://github.com/lazysboat/manta-pipeline/releases/latest/download/install.sh | sh
-#   curl -fsSL .../install.sh | sh -s -- v0.1.0.dev1     # pin a version
+#   curl -fsSL https://github.com/lazysboat/manta-pipeline/releases/download/v0.1.0.dev1/install.sh | sh -s -- v0.1.0.dev1
+#   curl -fsSL .../releases/latest/download/install.sh | sh     # only once a non-prerelease exists
 #
 # Override repo:    MANTA_REPO=owner/repo
 # Override target:  INSTALL_DIR=$HOME/.local/bin

@@ -71,7 +71,7 @@ jobs:
 
             CLI (Ubuntu):
             ```
-            curl -fsSL https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/install.sh | bash
+            curl -fsSL https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/install.sh | sh -s -- ${{ github.ref_name }}
             ```
             Python API (authoring):
             ```
