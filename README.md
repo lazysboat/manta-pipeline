@@ -2,7 +2,7 @@
 
 Implements single definition paradigm, enabling easy orchestration and observability of end-to-end ML pipelines. Open source extension for [Ray compute engine](https://www.ray.io/)
 
-**This is minimal dev preview for demonstration puroses** (`0.1.0.dev1`)
+**Minimal dev preview for now** (`0.1.0.dev1`)
 
 <!-- Ubuntu/Linux only. Requires [`uv`](https://docs.astral.sh/uv/).
 
